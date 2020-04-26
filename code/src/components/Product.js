@@ -13,7 +13,7 @@ export const Product = () => {
       {scanned.product && scanned.status == 1 && (
         <div>
           <h1>This is your product</h1>
-          <h2>{scanned}</h2>
+          <h2>{scanned.product.product_name}</h2>
         </div>
       )}
       {scanned.status === 0 && <h1 className="not-found">{scanned.status_verbose}</h1>}
