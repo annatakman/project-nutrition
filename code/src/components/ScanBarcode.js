@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchProduct } from '../reducers/food'
+import { fetchProduct } from '../reducers/products'
 import { BarcodeScanner } from 'components/BarcodeScanner'
 
 export const ScanBarcode = () => {
@@ -8,7 +8,7 @@ export const ScanBarcode = () => {
   const dispatch = useDispatch()
 
   const handleScan = (code) => {
-    console.log('Got barcode', code)
+    // console.log('Got barcode', code)
     setShowScanner(false)
     dispatch(fetchProduct(code))
   }

@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const food = createSlice({
-  name: 'food',
+export const products = createSlice({
+  name: 'products',
   initialState: {
-    all: {}
+    product: []
   },
   reducers: {
     setProductInformation: (state, action) => {
-      state.all = action.payload
+      state.product = action.payload
     }
   }
 })
@@ -18,9 +18,8 @@ export const fetchProduct = (code) => {
     fetch(`https://world.openfoodfacts.org/api/v0/product/${code}.json`)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json)
-        dispatch(food.actions.setProductInformation(json))
-        console.log('setProductInformation' + food.action.setProductInformation)
+        // console.log(json)
+        dispatch(products.actions.setProductInformation(json))
       })
   }
 }

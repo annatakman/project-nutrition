@@ -2,10 +2,11 @@ import React from "react"
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { ScanBarcode } from "components/ScanBarcode"
-import { food } from './reducers/food'
+import { Product } from 'components/Product'
+import { products } from './reducers/products'
 
 const reducer = combineReducers({
-  food: food.reducer
+  products: products.reducer
 })
 
 export const store = configureStore({ reducer })
@@ -23,6 +24,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <ScanBarcode />
+      <Product />
     </Provider>
   );
 };
