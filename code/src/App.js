@@ -1,9 +1,10 @@
-import React from "react"
+import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { ScanBarcode } from "components/ScanBarcode"
 import { Product } from 'components/Product'
 import { products } from './reducers/products'
+import styled from 'styled-components/macro'
 
 const reducer = combineReducers({
   products: products.reducer
@@ -11,42 +12,39 @@ const reducer = combineReducers({
 
 export const store = configureStore({ reducer })
 
-// const onDetected = (code) => {
-//   console.log(`Code: ${code}`);
-//   fetch(`https://world.openfoodfacts.org/api/v0/product/${code}.json`)
-//     .then((data) => data.json())
-//     .then((json) => {
-//       console.log(json);
-//     });
-// };
-
 export const App = () => {
   return (
     <Provider store={store}>
-      <ScanBarcode />
-      <Product />
+      <MainContainer>
+        <h1>Is this Cheese?</h1>
+        <ProductContainer />
+        <ScanBarcode />
+      </MainContainer>
     </Provider>
-  );
-};
+  )
+}
 
+const MainContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+  height: 90vh;
+  background-color: #F9E586;
+  border: 3px #000 solid;
+  border-radius: 16px;
 
-// export const App = () => {
-//   return (
-//     <Provider store={store}>
-//       <div>
-//         <label>
-//           {" "}
-//         Test codes here:{" "}
-//           {/* <input type="text" onChange={(e) => onDetected(e.target.value)}></input> */}
-//         </label>
-//         <p>
-//           {" "}
-//         Use the field above to test barcodes manually and keep an eye on your
-//         console in the browser. i.e. Type 7311070347272 - Pågen Gifflar. Yum
-//       </p>
-//         <ScanBarcode />
-//         {/* <BarcodeScanner onDetected={onDetected}></BarcodeScanner> */}
-//       </div>
-//     </Provider>
-//   );
-// };
+  h1{
+    margin: 0;
+    font-size: 30px;
+  }
+
+  @media (min-width: 700px){
+    width: 600px;
+  }
+
+`
+const ProductContainer = styled(Product)`
+height: 60%;
+`
