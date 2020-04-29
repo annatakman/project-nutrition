@@ -1,7 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { ScanBarcode } from "components/ScanBarcode"
 import { Product } from 'components/Product'
 import { LoadingIndicator } from 'components/LoadingIndicator'
 import { products } from './reducers/products'
@@ -22,7 +21,6 @@ export const App = () => {
         <LoadingIndicator />
         <h1>Is this Cheese?</h1>
         <ProductContainer />
-        <ScanBarcode />
       </MainContainer>
     </Provider>
   )
@@ -32,7 +30,7 @@ const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 300px;
   height: 90vh;
   background-color: #F9E586;
@@ -40,7 +38,7 @@ const MainContainer = styled.section`
   border-radius: 16px;
 
   h1{
-    margin: 0;
+    margin: 0 0 30px 0;
     font-size: 30px;
   }
 
