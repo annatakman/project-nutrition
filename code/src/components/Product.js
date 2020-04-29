@@ -39,23 +39,24 @@ export const Product = ({ className }) => {
 }
 
 const ProductInfo = styled.section`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-h2 {
-margin-top: 0;
-font-size: 22px;
-}
+  h2 {
+    margin-top: 0;
+    font-size: 22px;
+  }
 
-h3 {
-font-size: 18px;
-}
+  h3 {
+    font-size: 18px;
+  }
 
-h4{
-font-size: 18px;
-}
+  h4{
+    font-size: 18px;
+    }
+    
   }
 `
 const ProductImage = styled.img`

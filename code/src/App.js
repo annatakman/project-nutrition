@@ -45,7 +45,6 @@ const MainContainer = styled.section`
   @media (min-width: 700px){
     width: 600px;
   }
-
 `
 const ProductContainer = styled(Product)`
 height: 60%;

@@ -14,5 +14,6 @@ export const LoadingIndicator = () => {
           height={80}
           width={80}
           timeOut={3000} />)}
-    </>)
+    </>
+  )
 }
