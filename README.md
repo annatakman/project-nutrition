@@ -19,4 +19,4 @@ If we had more time we would incorporate React Router and make a loading indicat
 
 ## View it live
 
-https://is-this-cheese.netlify.app/
+https://is-it-cheese.netlify.app/
