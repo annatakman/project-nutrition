@@ -2,7 +2,6 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { Product } from 'components/Product'
-import { LoadingIndicator } from 'components/LoadingIndicator'
 import { products } from './reducers/products'
 import { loading } from './reducers/loading'
 import styled from 'styled-components/macro'
@@ -14,17 +13,6 @@ const reducer = combineReducers({
 
 export const store = configureStore({ reducer })
 
-export const App = () => {
-  return (
-    <Provider store={store}>
-      <MainContainer>
-        <LoadingIndicator />
-        <h1>Is this Cheese?</h1>
-        <ProductContainer />
-      </MainContainer>
-    </Provider>
-  )
-}
 
 const MainContainer = styled.section`
   display: flex;
@@ -49,3 +37,16 @@ const MainContainer = styled.section`
 const ProductContainer = styled(Product)`
 height: 60%;
 `
+
+export const App = () => {
+  return (
+    <Provider store={store}>
+      <MainContainer>
+       
+        <h1>Is this Cheese?</h1>
+        <ProductContainer />
+      </MainContainer>
+    </Provider>
+  )
+}
+
